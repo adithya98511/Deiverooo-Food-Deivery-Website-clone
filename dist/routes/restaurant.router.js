@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const role_middleware_1 = require("../middleware/role-middleware");
+const auth_middleware_1 = require("../middleware/auth-middleware");
+const restaurant_controller_1 = require("../controllers/restaurant.controller");
+const express_1 = require("express");
+const router = (0, express_1.Router)();
+router.get('/getRestaurants', auth_middleware_1.authMiddleware, (0, role_middleware_1.roleMiddleware)('admin'), restaurant_controller_1.getRestaurants);
+router.post('/createRestaurant', auth_middleware_1.authMiddleware, (0, role_middleware_1.roleMiddleware)('admin'), restaurant_controller_1.postCreateRestaurant);
+exports.default = router;
