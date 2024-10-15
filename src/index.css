@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Styling for Previous and Next arrows */
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.restaurant-container-top {
+  background-color: white;
+}
+
+.blur {
+  filter: blur(5px); 
+  pointer-events: none; 
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.00); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+/* Styling for Previous and Next arrows */
+/* Remove background images for arrows */
+.slick-prev, .slick-next {
+  width: 30px; /* Adjust width */
+  height: 30px; /* Adjust height */
+  display: flex;
+  align-items: center;
+  background-color: blue;
+  justify-content: center;
+  z-index: 10; /* Ensure arrows are on top */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+/* Customize the previous arrow */
+.slick-prev {
+  left: -20px; /* Adjust position as needed */
+}
+
+.slick-next {
+  right: -40px; /* Adjust position as needed */
+}
+
+/* Create arrow shapes using CSS */
+.slick-prev::before,
+.slick-next::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.slick-prev::before {
+  border-width: 5px 5px 5px 0; /* Adjust size of the arrow */
+  border-color: transparent lightblue transparent transparent; /* Light blue color */
+}
+
+.slick-next::before {
+  border-width: 5px 0 5px 5px; /* Adjust size of the arrow */
+  border-color: transparent transparent transparent lightblue; /* Light blue color */
+}
+
+/* Hover effect */
+.slick-prev:hover::before, 
+.slick-next:hover::before {
+  opacity: 0.8; /* Optional: Change opacity on hover */
+}
